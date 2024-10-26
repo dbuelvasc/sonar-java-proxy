@@ -37,10 +37,11 @@ subprojects {
     }
 }
 
-sonar {
+sonarqube {
   properties {
     property("sonar.projectKey", "dbuelvasc_sonar-java-proxy")
     property("sonar.organization", "dbuelvasc")
     property("sonar.host.url", "https://sonarcloud.io")
+    property("sonar.exclusions", "**/*.gradle.kts")
   }
 }
