@@ -34,5 +34,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GRADLE_OPTS: "-Xmx4g"  # Incrementa el heap memory a 2GB
         run: ./gradlew build sonar --info
 #------
