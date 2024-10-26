@@ -2,9 +2,9 @@ import net.ltgt.gradle.errorprone.errorprone
 
 plugins {
     id("com.diffplug.spotless")
-    id("org.sonarqube") version "5.0.0.4638"
     id("com.github.ben-manes.versions") version "0.51.0"
     id("net.ltgt.errorprone") version "4.0.0"
+    id("org.sonarqube") version "5.1.0.4882"
 }
 
 apply(from = "$rootDir/gradle/ci.gradle.kts")
@@ -37,12 +37,10 @@ subprojects {
     }
 }
 
-sonarqube {
-    properties {
-        property("sonar.projectKey", "zaproxy_zaproxy")
-        property("sonar.organization", "zaproxy")
-        property("sonar.host.url", "https://sonarcloud.io")
-        // Workaround https://sonarsource.atlassian.net/browse/SONARGRADL-126
-        property("sonar.exclusions", "**/*.gradle.kts")
-    }
+sonar {
+  properties {
+    property("sonar.projectKey", "dbuelvasc_sonar-java-proxy")
+    property("sonar.organization", "dbuelvasc")
+    property("sonar.host.url", "https://sonarcloud.io")
+  }
 }
